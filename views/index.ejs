@@ -2,40 +2,22 @@
 <div class="jumbotron" id="indexJumbotron">
   <h1 class="display-4">Sagarika S. Vaishnavi</h1>
   <hr class="my-4">
-  <h2>My Blogs</h2>
+	<a href = "/blogs/author/about">About Me</a>
 </div>
 
-<div class = "container" id="containerMain">
 	<div class = "row text-center">
-				<div class = "col-md-12 col-sm-12 mb-4 mt-5">	
-	<div class="left-element ">
-		<div class = "row text-center">
 			<% blogs.forEach(function(blog){%>
 				<div class = "col-md-4 col-sm-6 mb-4 mt-5">
 					<div class= "card h-100">
   						<img class="card-img-top" src = " <%= blog.image %> ">
   							<div class="card-body">
 								<a class ="card-title mb-3" href ="/blogs/<%= blog._id %>"><%= blog.title %></a>
-								<br>
-								<p class = "card-text mt-3"> <%- blog.body.substring(0,90) %>...</p>
+								<p class = "card-text mt-3" id="cardText"> <%- blog.body.substring(0,90) %>...</p>
 								<a href = "/blogs/<%= blog._id %>" class = "btn btn-dark mt-3">Read More</a>
 							</div>
 		    		</div>
 	    		</div>
-			<%}); %>	
-		</div>
+				<%}); %>	
 	</div>
-   	<div class="right-element mt-3 ml-2">
-		<div class="card" style="width: 18rem;">
-  			<img src="https://addons-media.operacdn.com/media/CACHE/images/themes/45/30345/1.0-rev1/images/de962b39-5341-4c7a-ba44-67c1fd80c4ba/d075d0407fe0a993e186b6c38d0a4558.jpg" 									class="card-img-top">
-  				<div class="card-body">
-    				<h5 class="card-title">About Me</h5>
-    				<p class="card-text">I only act like I know everything.</p>
-  				</div>
-		</div>	
-	</div>
-</div>
-	</div>
-</div>
 
 <% include partials/footer.ejs %>
